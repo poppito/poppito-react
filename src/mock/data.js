@@ -2,25 +2,25 @@ import { nanoid } from 'nanoid';
 
 // HEAD DATA
 export const headData = {
-  title: '', // e.g: 'Name | Developer'
-  lang: '', // e.g: en, es, fr, jp
-  description: '', // e.g: Welcome to my website
+  title: 'H. Overseer', // e.g: 'Name | Developer'
+  lang: 'en', // e.g: en, es, fr, jp
+  description: 'Hello and welcome!', // e.g: Welcome to my website
 };
 
 // HERO DATA
 export const heroData = {
-  title: '',
-  name: '',
-  subtitle: '',
+  title: 'Hello',
+  name: 'friend,',
+  subtitle: 'My name is H. Overseer',
   cta: '',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: '',
-  paragraphTwo: '',
-  paragraphThree: '',
+  paragraphOne: 'I like building stuff (mobile apps - Android and iOS, DIY Carpentry, makeshift hats for dogs/cats/birds). In most cases, I have no idea what I\'m doing!',
+  paragraphTwo: 'I can sometimes be found on twitter where I rant about Android, iOS and DevOps, the current state of Australian Politics or complain about the NBN, Telstra and Metro trains (aussie whinge staples)',
+  paragraphThree: ' ',
   resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
 };
 
