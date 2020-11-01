@@ -49,6 +49,7 @@ const Projects = () => {
                         </p>
                         <p className="mb-4">{info2 || ''}</p>
                       </div>
+                      {url && (
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -57,6 +58,7 @@ const Projects = () => {
                       >
                        iOS
                       </a>
+                      )}
 
                       {repo && (
                         <a

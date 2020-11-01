@@ -32,7 +32,7 @@ export const projectsData = [
     title: 'Particle Paradox',
     info: 'Particle Paradox is a game about a Particle\'s journey in multiple universes.',
     info2: 'Available on both Android and iOS',
-    url: 'https://apps.apple.com/au/app/particle-paradox/id1536898085',
+    url: 'https://apps.apple.com/au/app/particle-paradox/id1536898085#?platform=iphone',
     repo: 'https://play.google.com/store/apps/details?id=io.embry.crowley&hl=en_AU&gl=US', // if no repo, the button will not show up
   },
   {
@@ -41,7 +41,7 @@ export const projectsData = [
     title: 'The Huxtable Saga',
     info: 'A 2d side scrolling adventure game with plenty of puzzles!',
     info2: 'Available on both Android and iOS',
-    url: 'https://apps.apple.com/au/app/the-huxtable-saga/id1498415989',
+    url: 'https://apps.apple.com/au/app/the-huxtable-saga/id1498415989#?platform=iphone',
     repo: 'https://play.google.com/store/apps/details?id=io.embry.huxtable&hl=en_AU&gl=US', // if no repo, the button will not show up
   },
   {
@@ -52,6 +52,24 @@ export const projectsData = [
     info2: 'Explore Aussie slang with recorded pronunciations, a Slangman game and more. On iOS it also has a game on Apple Watch',
     url: 'https://apps.apple.com/au/app/strayamate-aussie-slang-more/id1363054907#?platform=iphone',
     repo: 'https://play.google.com/store/apps/details?id=strayanslangapp.noni.com.strayanslangapp&hl=en_AU&gl=US', // if no repo, the button will not show up
+  },
+  {
+    id: nanoid(),
+    img: 'turntapp.png',
+    title: 'TurntApp',
+    info: 'Convert your Live Photos and short videos into reversible videos with video filtering',
+    info2: 'iOS only',
+    url: 'https://apps.apple.com/au/app/turnt-reversible-tiny-videos/id1434952320#?platform=iphone',
+    repo: '', // if no repo, the button will not show up
+  },
+  {
+    id: nanoid(),
+    img: 'hh.png',
+    title: 'Handwash Hygiene',
+    info: 'An action on Google - Just go to any Google Assitant enabled device and say \"Ok Google, Talk to Handwash Hygiene\"',
+    info2: 'Available on Google Home/Home mini and all Android devices - anything that run Google Assistant.',
+    url: '',
+    repo: '', // if no repo, the button will not show up
   },
 ];
 
