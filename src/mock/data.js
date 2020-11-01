@@ -9,18 +9,18 @@ export const headData = {
 
 // HERO DATA
 export const heroData = {
-  title: 'Hello',
-  name: 'friend,',
-  subtitle: 'My name is H. Overseer',
+  title: 'Hello, friend - my name is',
+  name: 'Harsh Overseer,',
+  subtitle: 'Nice to meet you.',
   cta: '',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: 'I like building stuff (mobile apps - Android and iOS, DIY Carpentry, makeshift hats for dogs/cats/birds). In most cases, I have no idea what I\'m doing!',
-  paragraphTwo: 'I can sometimes be found on twitter where I rant about Android, iOS and DevOps, the current state of Australian Politics or complain about the NBN, Telstra and Metro trains (aussie whinge staples)',
-  paragraphThree: ' ',
+  paragraphOne: 'I am a Software Engineer based in Melbourne, Australia. I like building stuff - mobile apps and games mainly - Android and iOS.',
+  paragraphTwo: 'I write code in Kotlin (or Java), Swift and on darker days, Javascript. Because I am obsessed with fixing things, sometimes I get lured into DevOps too.',
+  paragraphThree: 'I can often be found on twitter where I rant about Android, iOS and DevOps, the current state of Australian Politics or complain about the NBN, Telstra and Metro trains (aussie whinge staples)',
   resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
 };
 
