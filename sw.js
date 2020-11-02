@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-412c25c40ba4593113a3.js"
+    "url": "webpack-runtime-afe51ea65311f1965bc5.js"
   },
   {
     "url": "framework-dbb498007a7447f28d8e.js"
   },
   {
-    "url": "app-587303dd14cd85e28540.js"
+    "url": "app-21be6ac518c6a1691e03.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "08f5101d156dbaab2705426cdc9660f0"
+    "revision": "d3b0c505bf4ba4d16e3fc578c404f0c1"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-b0556ce5127c1a3e2490.js"
@@ -48,14 +48,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "e96ec4cf02244faa3a4ccf654e33aad3"
+    "revision": "3b3c501408155e2213e27c67d4ffe582"
   },
   {
     "url": "polyfill-4b1e8b7e04c413f9811f.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "44f6310c60434cbde696ebd0a1ad0b44"
+    "revision": "19bf65ad8d0cd8657f42b4e6ddf49212"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -142,12 +142,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/poppito`), ``)
+  pathname = pathname.replace(new RegExp(`^/poppito.github.io`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/poppito/app-587303dd14cd85e28540.js`))) {
+  if (!resources || !(await caches.match(`/poppito.github.io/app-21be6ac518c6a1691e03.js`))) {
     return await fetch(event.request)
   }
 
@@ -160,7 +160,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/poppito/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/poppito.github.io/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
