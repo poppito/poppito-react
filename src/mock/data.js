@@ -21,7 +21,7 @@ export const aboutData = {
   paragraphOne: 'I am a Software Engineer based in Melbourne, Australia. I like building stuff - mobile apps and games mainly, natively on Android and iOS.',
   paragraphTwo: 'I write code in Kotlin (or Java), Swift and on darker days, Javascript. Because I am obsessed with fixing things, sometimes I get lured into DevOps too.',
   paragraphThree: 'I can often be found on twitter where I rant about code, the current state of Australian Politics or complain about the NBN, Telstra and Metro trains (aussie whinge staples)',
-  blog: 'https://embry.io/blog', // if no resume, the button will not show up
+  blog: '', // if no resume, the button will not show up
 };
 
 // PROJECTS DATA
