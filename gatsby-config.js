@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/poppito",
+  pathPrefix: "/poppito.github.io",
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
