@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
+import { Link } from 'react-scroll';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
@@ -48,6 +49,11 @@ const About = () => {
                 <p className="about-wrapper__info-text">
                   {paragraphThree || 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'}
                 </p>
+                  <span className="d-flex mt-3">
+                  <Link className="cta-btn cta-btn--resume" to="projects" smooth duration={1000}>
+                  {'Projects'}
+                </Link>
+              </span>
                 {blog && (
                   <span className="d-flex mt-3">
                     <a
