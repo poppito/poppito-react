@@ -4,6 +4,7 @@ date:   2020-08-22 14:00 +1100
 ---
 
 import '../style/main.scss';
+import  review_test from './img/review_test.mp4'
 
 <div className="blog">
 
@@ -118,7 +119,10 @@ Now we can start our In-app Review flow, first by grabbing the `ReviewManager` t
 
 - I would not recommend creating an `Alpha` track build! These go through reviews! And of course `Beta` track is open to everyone in the world, so definitely also not recommended. 🚫
 
-### Demo
-<iframe width="414" height="711" src="./review_test.mp4" frameborder="0"> </iframe>
+
+
+<div align="center">
+    <video width="30%" controls autostart autoPlay src={review_test} type="video/mp4" />
+</div>
 
 </div>
