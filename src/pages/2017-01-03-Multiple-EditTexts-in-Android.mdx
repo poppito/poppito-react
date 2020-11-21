@@ -5,14 +5,23 @@ date:   2017-01-03 07:42 +1100
 categories: post
 ---
 
-Often times there is a necessity for an app to display multiple EditText inputs. For example, lets take a look at this screen in my application [Orderise](https://play.google.com/store/apps/details?id=com.noni.Orderise&hl=en).
+import three from './images/3.png';
 
-![](/images/3.png)
+<div className="blog">
+
+# Multiple EditTexts in Android
+
+Often times there is a necessity for an app to display multiple EditText inputs. For example, lets take a look at this screen in my application Orderise (since been unpublished)
+
+<p align="center">
+<img src = { three } width="30%" />;
+</p>
 
 There are two EditText input boxes namely, a special_orders and a name box.
 
 It is possible to have a single TextWatcher for multiple EditTexts, like so:
 
+    ```
     //first define each EditText
     EditText nameText = (EditText) findViewById(R.id.name);
     EditText specialOrders = (EditText) findViewById(R.id.special_instructions);
@@ -20,6 +29,8 @@ It is possible to have a single TextWatcher for multiple EditTexts, like so:
     //Next add textwatchers for each editText. You will need to get the activity or fragment that contains them to implement TextWatcher
     nameText.addTextChangedListener(this);
     special_orders.addTextChangedListener(this);
+
+    ```
 
 Now, this is where it gets interesting. You see, if this were multiple Buttons for a single OnClickListener, it would be easy as pie - just get the activity to implement the OnClickListener and then look for each Button's Id to be able to detect which button was clicked. Something like:
 
@@ -52,3 +63,5 @@ But unfortunately, with TextWatcher we do not have the luxury of the the View ob
     }
 
 There are of course a few other ways - one is to subclass the EditText Class and then pass the EditText View object into the three methods. But I believe the solution above is a bit more elegant.
+
+</div>
