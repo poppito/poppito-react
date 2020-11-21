@@ -4,7 +4,12 @@ title:  "App monetisation and In-App Billing in Android."
 date:   2017-12-08 19:30 +1100
 categories: post
 ---
+
+<div className="blog">
+
 # Android apps and monetisation.
+<br/>
+<br/>
 
 Some devs make apps for fun, some make them for learning things. But if you've got a good app idea, chances are you want to be able to monetise it. With Android, there are several ways of going about it i.e. putting in ads - which relies on not only high volumes of downloads but large amounts of ad screen time - or you could sell a paid app - but that's not without its challenges. A lot of mobile users will want to be able to try your app just so they can work out if it's worth their while. This would perhaps mean publishing a trial version of your app and then subtly diverting these users to a paid version - but this does mean you'd have to then publish two versions of your app - however, you're still splitting your audience across two apps - this means splitting your ratings, downloads and app indexation on the Play store!
 
@@ -131,8 +136,12 @@ The `BillingClient` convenience class provides a gateway into the [Play Billing 
   But what about users that have already bought your product? Well, you'll have to run this process at the start of your app too! Users that have already bought your app don't need to be run through a purchase process of course!
 
 # Optimisation tips.
+
  * It almost seems like you're going to have to follow the billing process twice. You're just better off using a `Singleton` instance of the `BillingClient`. If you're using a DI framework like the excellent [Dagger](https://google.github.io/dagger/), you're better off creating a `Singleton` component on your dependency graph and then injecting it as needed.
 
  * One of the biggest challenges for me was the fact that `In-App Billing` was not showing up on the Play console. That'd be because my production APK didn't have the In-App billing permissions. This is easily remedied by creating an Alpha release of your app - and actually its highly recommended because you can then use test accounts to test the purchase flows. As long as your test users are added as alpha testers for your app!
 
  **Questions? Suggestions? Compliments? Tips to make this post better? I'd love to hear your thoughts! Join the conversation on twitter and tweet to [@overjeer](https://twitter.com/overjeer)**
+
+
+</div>
