@@ -4,23 +4,23 @@ import { StaticQuery, graphql } from "gatsby"
 export default function Home({ data }) {
   return (
       <StaticQuery query={query}
-      render={data => <div>{data.allMdx.edges.map(node => <div> {node.node.frontmatter.title} <br/> </div>)}</div>}
+      render={data => <div className="blogText">{data.allMdx.edges.map(node => <h3> {node.node.frontmatter.title} <br/> </h3>)}</div>}
       />
   )
 }
 
 export const query = graphql
 `query {
-        allMdx {
-          edges {
-            node {
-              frontmatter {
-                title
-                slug
-                date
-              }
-            }
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+            date
           }
         }
       }
+    }
+  }  
 `
