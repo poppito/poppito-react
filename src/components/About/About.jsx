@@ -8,7 +8,7 @@ import { Link } from 'react-scroll';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
-  const { img, paragraphOne, paragraphTwo, paragraphThree, blog } = about;
+  const { img, paragraphOne, paragraphTwo, paragraphThree, linkedin, blog } = about;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -47,7 +47,7 @@ const About = () => {
                     'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
                 </p>
                 <p className="about-wrapper__info-text">
-                  {paragraphThree || 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'}
+                  {'The projects showcased here are my indie apps and games -- however, to take a look at all of the commercial apps I have built you can visit my'} <a href={linkedin}>{'LinkedIn'}</a>
                 </p>
                   <span className="d-flex mt-3">
                   <Link className="cta-btn cta-btn--resume" to="projects" smooth duration={1000}>
