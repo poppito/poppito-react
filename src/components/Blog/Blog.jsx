@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 export default function Home({ data }) {
   return (
       <StaticQuery query={query}
-      render={data => <div>{data.allMdx.edges.map(node => node.node.frontmatter.title)}</div>}
+      render={data => <div>{data.allMdx.edges.map(node => <div> {node.node.frontmatter.title} <br/> </div>)}</div>}
       />
   )
 }
