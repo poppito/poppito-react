@@ -18,6 +18,12 @@
     clip-path: none;
   }
 
+  .linkedIn-link {
+    text-decoration-color: #dddddd;
+    color: #631010;
+    text-underline-position: below;
+  }
+
   .about-wrapper {
     @include respond(phone) {
       padding-bottom: 5rem;
