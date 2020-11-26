@@ -21,7 +21,29 @@ export const aboutData = {
   paragraphOne: 'I am a Software Engineer based in Melbourne, Australia. I like building stuff - mobile apps and games mainly, natively on Android and iOS.',
   paragraphTwo: 'I write code in Kotlin (or Java), Swift and on darker days, Javascript. Because I am obsessed with fixing things, sometimes I get lured into DevOps too.',
   linkedin: 'https://linkedin.com/in/hoverseer',
-  blog: '/blog', // if no resume, the button will not show up
+  blog: '/blog', // if no resume, the button will not show up,
+  networks: [
+    {
+      id: nanoid(),
+      name: 'twitter',
+      url: 'https://twitter.com/overjeer',
+    },
+    {
+      id: nanoid(),
+      name: 'instagram',
+      url: 'https://instagram.com/embryio',
+    },
+    {
+      id: nanoid(),
+      name: 'linkedin',
+      url: 'https://linkedin.com/in/hoverseer',
+    },
+    {
+      id: nanoid(),
+      name: 'github',
+      url: 'https://github.com/poppito',
+    },
+  ],
 };
 
 // PROJECTS DATA
@@ -80,31 +102,6 @@ export const contactData = {
   email: 'harsh@embry.io',
 };
 
-// FOOTER DATA
-export const footerData = {
-  networks: [
-    {
-      id: nanoid(),
-      name: 'twitter',
-      url: 'https://twitter.com/overjeer',
-    },
-    {
-      id: nanoid(),
-      name: 'instagram',
-      url: 'https://instagram.com/embryio',
-    },
-    {
-      id: nanoid(),
-      name: 'linkedin',
-      url: 'https://linkedin.com/in/hoverseer',
-    },
-    {
-      id: nanoid(),
-      name: 'github',
-      url: 'https://github.com/poppito',
-    },
-  ],
-};
 
 // Github start/fork buttons
 export const githubButtons = {

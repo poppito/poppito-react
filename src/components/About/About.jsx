@@ -8,7 +8,7 @@ import { Link } from 'react-scroll';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
-  const { img, paragraphOne, paragraphTwo, paragraphThree, linkedin, blog } = about;
+  const { img, paragraphOne, paragraphTwo, linkedin, blog, networks} = about;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -66,6 +66,23 @@ const About = () => {
                     </a>
                   </span>
                 )}
+                <div className="social-links">
+                  {networks &&
+                    networks.map((network) => {
+                      const { id, name, url } = network;
+                      return (
+                        <a
+                          key={id}
+                          href={url || 'https://github.com/cobidev/gatsby-simplefolio'}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          aria-label={name}
+                        >
+                          <i className={`fa fa-${name || 'refresh'} fa-inverse`} />
+                        </a>
+                      );
+                    })}
+                </div>
               </div>
             </Fade>
           </Col>

@@ -4,7 +4,20 @@ import { StaticQuery, graphql } from "gatsby"
 export default function Home({ data }) {
   return (
       <StaticQuery query={query}
-  render={data => <div className="blogText">{data.allMdx.edges.map(node => <a href={"../" + node.node.frontmatter.slug}> {node.node.frontmatter.title} <br/> </a>)}</div>}
+  render =
+        {data => 
+          <section >
+          <section className="home">
+              <a href={"/"} smooth duration={1000}>
+              {"Back"}
+              </a>
+            </section>
+            <h1 className="section-title">Blog</h1>
+            <div className="blogText">
+            {data.allMdx.edges.map(node => <a href={"../" + node.node.frontmatter.slug}> {node.node.frontmatter.title} <br/><br/> </a>)}
+            </div>
+        </section>
+        }
       />
   )
 }
