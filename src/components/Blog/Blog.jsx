@@ -7,11 +7,11 @@ export default function Home({ data }) {
   render =
         {data => 
           <section >
-          <section className="home">
+          <div className="home">
               <a href={"/"} smooth duration={1000}>
               {"Back"}
               </a>
-            </section>
+            </div>
             <h1 className="blogBody">Blog</h1>
             <div className="blogText">
             {data.allMdx.edges.map(node => <a href={"../" + node.node.frontmatter.slug}> {node.node.frontmatter.title} <br/><br/> </a>)}
