@@ -12,7 +12,7 @@ export default function Home({ data }) {
               {"Back"}
               </a>
             </section>
-            <h1 className="section-title">Blog</h1>
+            <h1 className="blogBody">Blog</h1>
             <div className="blogText">
             {data.allMdx.edges.map(node => <a href={"../" + node.node.frontmatter.slug}> {node.node.frontmatter.title} <br/><br/> </a>)}
             </div>
