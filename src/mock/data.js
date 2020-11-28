@@ -72,7 +72,7 @@ export const projectsData = [
     title: 'Aussie slang, pronunciation sounds and places',
     info: 'The #1 Aussie slang app on Android and iOS',
     info2: 'Explore Aussie slang with recorded pronunciations, a Slangman game and more. On iOS it also has a game on Apple Watch',
-    url: 'https://apps.apple.com/au/app/strayamate-aussie-slang-more/id1363054907#?platform=iphone',
+    url: 'https://apps.apple.com/au/app/strayamate-australian-slang/id1450772857#?platform=iphone',
     repo: 'https://play.google.com/store/apps/details?id=strayanslangapp.noni.com.strayanslangapp&hl=en_AU&gl=US', // if no repo, the button will not show up
   },
   {
