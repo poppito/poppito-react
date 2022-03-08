@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
@@ -14,7 +16,8 @@ export default function Home({ data }) {
             </div>
             <h1 className="blogBody">Blog</h1>
             <div className="blognames">
-            {data.allMdx.edges.map(node => <a href={"../" + node.node.frontmatter.slug}> {node.node.frontmatter.title} <br/><br/> </a>)}
+            {data.allMdx.edges.filter(node => node.node.frontmatter.categories === "blog")
+            .map(node => <a href={"../" + node.node.frontmatter.slug}> {node.node.frontmatter.title} <br/><br/> </a>)}
             </div>
         </section>
         }
@@ -31,6 +34,7 @@ export const query = graphql
             title
             slug
             date
+            categories
           }
         }
       }
