@@ -1,0 +1,52 @@
+---
+slug: "2022-03-17-invalidating-firebase-push-tokens-silently"
+title:  "Removing unused Firebase push tokens silently"
+date:   2022-03-17 21:30 +1100
+categories: "blog"
+---
+
+<div className="blogpage">
+    <a href={"/blog"} smooth duration={1000}>
+    {"Back"}
+    </a>
+</div>
+
+<div className="blogText">
+
+# Removing Firebase push tokens silently.
+
+<br/>
+<br/>
+
+Push messaging in modern mobile apps with Firebase is really common. The usual workflow is:
+- Integrating Firebase push SDKs / Cocoapods / SPM packages within the app.
+- Registering a project on the Firebase console.
+- On native apps, configuring the Firebase library, requesting for notification permissions, obtaining push tokens and saving them to a backend service.
+
+
+A lot of apps obtain push tokens at login (an optimal way of doing this is by requesting the current token from Firebase's local cache). Apps that support multiple users / login, usually also invalidate tokens on logout. 
+But what if the user never logs out, but removes / uninstall the app? 🤔
+
+The best way to invalidate these tokens, unfortunately is by looking for errors when a push message is sent outbound, like so:
+
+```        
+admin.messaging().sendToDevice(tokens, message, options)
+    .then((response) => {
+        console.log('Successfully sent message:', response);
+    }).catch((error) => {
+        if (error.code === 'messaging/invalid-registration-token' ||
+            error.code === 'messaging/registration-token-not-registered') {
+            //a promise here to delete the token which can be pushed to an array,
+            //then return promise.all 👍
+        }
+    });
+```
+
+This is however problematic in apps that a) don't want to send out bulk outbound notifications and b) only support async notifications ie. notifications that go out when the 
+user performs an action.
+
+
+There's a better way! 
+
+
+</div>
