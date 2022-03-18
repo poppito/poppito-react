@@ -1,5 +1,5 @@
 ---
-slug: "2022-03-17-invalidating-firebase-push-tokens-silently"
+slug: "2022-03-17-Firebase-remove-unused-push-tokens"
 title:  "Removing unused Firebase push tokens silently"
 date:   2022-03-17 21:30 +1100
 categories: "blog"
@@ -19,8 +19,11 @@ categories: "blog"
 <br/>
 
 Push messaging in modern mobile apps with Firebase is really common. The usual workflow is:
+
 - Integrating Firebase push SDKs / Cocoapods / SPM packages within the app.
+
 - Registering a project on the Firebase console.
+
 - On native apps, configuring the Firebase library, requesting for notification permissions, obtaining push tokens and saving them to a backend service.
 
 
@@ -29,7 +32,7 @@ But what if the user never logs out, but removes / uninstall the app? 🤔
 
 The best way to invalidate these tokens, unfortunately is by looking for errors when a push message is sent outbound, like so:
 
-```        
+```js
 admin.messaging().sendToDevice(tokens, message, options)
     .then((response) => {
         console.log('Successfully sent message:', response);
@@ -46,7 +49,49 @@ This is however problematic in apps that a) don't want to send out bulk outbound
 user performs an action.
 
 
-There's a better way! 
+There's a better way. On closely inspecting the way Firebase functions sends out push notifications, I realised there is a 
+
+
+```js
+sendToDevice(registrationToken: string | string[], payload: MessagingPayload, options?: MessagingOptions): Promise<MessagingDevicesResponse>;
+```
+
+Here, `MessagingOptions` has a `dryRun?: boolean` variable, when set to true, it won't actually send the push message but rather do a dry run.
+
+
+Essentially, how we can create a [scheduled](https://firebase.google.com/docs/functions/schedule-functions) Firebase function that:
+a) Polls for all push tokens
+
+```js
+for (const [key, value] of tokens.entries()) {
+        allTokens.push(key);
+}
+```
+
+b) sets dry run to true.
+
+```js
+    const options = {
+        dryRun: true
+    }
+
+```
+
+c)  Finally, send out push notifications, poll for errors and remove invalid tokens:
+
+```js
+    admin.messaging().sendToDevice(allTokens, message, options)
+    .then((response) => {
+        response.results.forEach((deviceResult, index) => {
+            if (deviceResult.error) {
+                let failedToken = allTokens[index];
+                //push a promise to remove token from db.
+            }
+        });
+    });
+    return Promise.all(tokensToRemove);
+
+```
 
 
 </div>
