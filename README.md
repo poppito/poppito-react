@@ -20,4 +20,4 @@ run `gatsby develop`, this will run the site on `localhost:8000`
 
 # to deploy
 
-run `gatsby deploy`. This seems to overwrite the domain name everytime, thus warranting renaming the domain name every time in the github pages page settings section.
+run `yarn deploy`. This seems to overwrite the domain name everytime, thus warranting renaming the domain name every time in the github pages page settings section.
