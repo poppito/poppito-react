@@ -90,7 +90,7 @@ export const projectsData = [
     title: 'Handwash Hygiene',
     info: 'An action on Google - Just go to any Google Assitant enabled device and say \"Ok Google, Talk to Handwash Hygiene\"',
     info2: 'Available on Google Home/Home mini and all Android devices - anything that run Google Assistant.',
-    url: '',
+    url: 'https://assistant.google.com/services/a/uid/000000562c2a9aac',
     repo: '', // if no repo, the button will not show up
   },
 ];
