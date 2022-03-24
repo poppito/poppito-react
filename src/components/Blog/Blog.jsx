@@ -9,7 +9,7 @@ export default function Home({ data }) {
   render =
         {data => 
           <section >
-          <div className="home">
+          <div className="blogpage">
               <a href={"/"} smooth duration={1000}>
               {"Back"}
               </a>
