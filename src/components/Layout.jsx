@@ -39,7 +39,9 @@ function Layout({ children, color, pageContext: { header } }) {
             {children}
             <br/>
             <br/>
-          <h2>Questions? Suggestions? Compliments? Tips to make this post better? I'd love to hear your thoughts! Tweet to <a href="https://twitter.com/overjeer">me</a> on the ol' Twitter!</h2>
+            <br/>
+            <br/>
+          <p>Questions? Suggestions? Compliments? Tips to make this post better? I'd love to hear your thoughts! <a href="https://twitter.com/overjeer">tweet to me</a> on the ol' Twitter!</p>
           </div>
           </div>
         </>
