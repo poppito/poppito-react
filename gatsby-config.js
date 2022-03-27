@@ -6,12 +6,17 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
-    `gatsby-transformer-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `imgs`,
         path: `${__dirname}/src/blog/images/`
       },
     },
@@ -27,6 +32,12 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/src/blog/`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-mdx',
+      options: {
+        defaultLayout: `${__dirname}/src/components/blog-layout`,
       },
     },
     {

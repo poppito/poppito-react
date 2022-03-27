@@ -5,18 +5,8 @@ date:   2022-03-17 21:30 +1100
 categories: "blog"
 ---
 
-<div className="blogpage">
-    <a href={"/blog"} smooth duration={1000}>
-    {"Back"}
-    </a>
-</div>
-
-<div className="blogText">
 
 # Invalidating unused Firebase push tokens using scheduled functions
-
-<br/>
-<br/>
 
 Push messaging in modern mobile apps with Firebase is really common. The usual workflow is:
 
@@ -92,6 +82,3 @@ c)  Finally, send out push notifications, poll for errors and remove invalid tok
     return Promise.all(tokensToRemove);
 
 ```
-
-
-</div>
