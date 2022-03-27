@@ -20,6 +20,7 @@ import play_store_gotcha from './images/play_store_gotcha.png';
     </a>
 </div>
 
+
 <div className="blogText">
 
 
@@ -48,7 +49,7 @@ Once this is set up, the user then goes to the internal or alpha testing link ge
 
 When the user goes to the opt-in URL on their device, they can opt into testing the app like so
 
-For more information about tracks, distribution lists and opt-in urls, I previously wrote <a href={"/2019-09-28-Relasing-an-app"} smooth duration={1000}>this post</a>
+For more information about tracks, distribution lists and opt-in urls, I previously wrote [this post](../2019-09-28-Relasing-an-app)
 
 <br/>
 <br/>
@@ -57,7 +58,7 @@ For more information about tracks, distribution lists and opt-in urls, I previou
 
 Ok so your tester distribution list is receiving your binaries and testing's going real smooth. Glad to hear it. Because the tester distribution list
 uses the Play Store app to download test binaries there is a bit of a conundrum. Suppose they want to do a quick comparison with the current production app.
-Does that mean they now have to go through the opt-out process? So everytime they want to switch between the alpha/beta tracks and the production trackc, this
+Does that mean they now have to go through the opt-out process? So everytime they want to switch between the alpha/beta tracks and the production track, this
 would be super tedious, right? Sure would!
 
 Well, here's a neat trick.
@@ -90,7 +91,7 @@ Now if you switch accounts to an account that is NOT on the tester distribution 
 # A quick gotcha
 
 If you get a warning such as the one below -- the Play store cache has not been cleared properly! This means Play Store is remembering that one
-of your accounts is on the tester distribution list! Just follow the steps above to clear the cache and data for the Play Store app!ß
+of your accounts is on the tester distribution list! Just follow the steps above to clear the cache and data for the Play Store app!
 
 <img className="image" src= { play_store_gotcha } width="500" />
 
