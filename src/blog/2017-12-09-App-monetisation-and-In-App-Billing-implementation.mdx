@@ -5,6 +5,9 @@ date:   2017-12-08 19:30 +1100
 categories: "blog"
 ---
 
+import inAppProducts from "./images/billing/in-app-products.png";
+import addProducts from "./images/billing/add-product.png";
+
 # Android apps and monetisation.
 <br/>
 <br/>
@@ -72,10 +75,10 @@ The `BillingClient` convenience class provides a gateway into the [Play Billing 
   Next, give it a title and a description as well as price. This will show up when a user tries to buy your In-app product through your app, so make it short and simple. The Play console does automatic currency conversions for countries your app is supported in - so if you need to tweak that for individual countries - you can it here as well. Finally, click  on save and it will add your `In-App product`.
 
   <p align="center">
-  <img src="../images/billing/in-app-products.png"/>
+  <img src= { inAppProducts } width="30%" />
   </p>
   <p align="center">
-  <img src="../images/billing/add-product.png"/>
+  <img src= { addProducts } width="50%" />
   </p>
 
   Now that you've got an `sku`, you can create a `@StringRes` for it.

@@ -6,6 +6,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
