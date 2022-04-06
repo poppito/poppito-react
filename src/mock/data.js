@@ -50,6 +50,14 @@ export const aboutData = {
 export const projectsData = [
   {
     id: nanoid(),
+    img: 'motivational_shit_stickers.png',
+    title: 'Motivational Sh*t Stickers',
+    info: ' I came up with the idea of these motivational stickers one day when I was changing my baby\'s nappy full of 💩💩💩',
+    info2: 'Available on iOS only',
+    url: 'https://apps.apple.com/us/app/motivational-sh-t-stickers/id1612941064?platform=iphone'
+  },
+  {
+    id: nanoid(),
     img: 'paradox.png',
     title: 'Particle Paradox',
     info: 'Particle Paradox is a game about a Particle\'s journey in multiple universes.',
