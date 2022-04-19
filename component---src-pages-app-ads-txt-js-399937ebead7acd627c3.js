@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[38],{J9yo:function(n,o,e){},ST0m:function(n,o,e){"use strict";e.r(o);var c=e("q1tI"),t=e.n(c);e("J9yo");o.default=function(){return t.a.createElement("body",null,"google.com, pub-1922317239850900, DIRECT, f08c47fec0942fa0")}}}]);
+//# sourceMappingURL=component---src-pages-app-ads-txt-js-399937ebead7acd627c3.js.map
