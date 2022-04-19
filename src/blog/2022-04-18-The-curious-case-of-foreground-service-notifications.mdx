@@ -9,7 +9,7 @@ import notifications from './images/copy_pasta.webm';
 
 # A background on background work in Android
 
-When I first got into Android development, background services were kind a little bit [unrestricted](https://android-developers.googleblog.com/2010/02/service-api-changes-starting-with.html)
+When I first got into Android development, background services were kinda [unrestricted](https://android-developers.googleblog.com/2010/02/service-api-changes-starting-with.html)
 
 Because the Services API is so **powerful** and being able to do things in the background while persisting the app's [process](https://proandroiddev.com/android-internals-101-how-android-os-starts-you-application-e1c98a014c05#:~:text=According%20to%20dictionary%20definition%3A%20Zygote,thus%20achieving%20fast%20app%20launches.) can
 actually affect the device's performance due to contention (Memory, CPU) and usage (battery), developers certainly have a responsibility to use services wisely.
@@ -44,66 +44,66 @@ Let's find out by creating a sample app that does this.
 - Create `SomeService`
 
 ```
-class SomeService : Service() {
+    class SomeService : Service() {
 
-    companion object {
-        const val CHANNEL_NAME = "serviceChannel"
-        const val CHANNEL_ID = "channelId"
-        const val TITLE = "SomeService up"
-        const val MESSAGE = "SomeService is now running"
-        val targetActivity = HomeActivity::class.java
-        const val NOTIFICATION_ID = 0
-    }
-
-    override fun onBind(intent: Intent): IBinder? = null
-
-    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val target = Intent(this, targetActivity)
-        val targetIntent =
-            PendingIntent.getActivity(this, 1, target, PendingIntent.FLAG_UPDATE_CURRENT)
-
-        val notificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle(TITLE)
-            .setContentText(MESSAGE)
-            .setNotificationSilent()
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentIntent(targetIntent)
-            .build()
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_ID,
-                CHANNEL_NAME,
-                NotificationManager.IMPORTANCE_DEFAULT
-            )
-            notificationManager.createNotificationChannel(channel)
+        companion object {
+            const val CHANNEL_NAME = "serviceChannel"
+            const val CHANNEL_ID = "channelId"
+            const val TITLE = "SomeService up"
+            const val MESSAGE = "SomeService is now running"
+            val targetActivity = HomeActivity::class.java
+            const val NOTIFICATION_ID = 0
         }
 
-        if (Build.VERSION.SDK_INT >= 29) {
-            startForeground(startId, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_NONE)
-        } else {
-            startForeground(startId, notification)
+        override fun onBind(intent: Intent): IBinder? = null
+
+        override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+            val target = Intent(this, targetActivity)
+            val targetIntent =
+                PendingIntent.getActivity(this, 1, target, PendingIntent.FLAG_UPDATE_CURRENT)
+
+            val notificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle(TITLE)
+                .setContentText(MESSAGE)
+                .setNotificationSilent()
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentIntent(targetIntent)
+                .build()
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val channel = NotificationChannel(
+                    CHANNEL_ID,
+                    CHANNEL_NAME,
+                    NotificationManager.IMPORTANCE_DEFAULT
+                )
+                notificationManager.createNotificationChannel(channel)
+            }
+
+            if (Build.VERSION.SDK_INT >= 29) {
+                startForeground(startId, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_NONE)
+            } else {
+                startForeground(startId, notification)
+            }
+
+            serviceStarted = true
+            return START_NOT_STICKY
         }
 
-        serviceStarted = true
-        return START_NOT_STICKY
+        override fun stopService(name: Intent?): Boolean {
+            serviceStarted = false
+            return super.stopService(name)
+        }
     }
-
-    override fun stopService(name: Intent?): Boolean {
-        serviceStarted = false
-        return super.stopService(name)
-    }
-}
 ```
 
 - `ServiceNotifier` is a `Singleton` that sets/unsets the `serviceStarted` flag. This is just for us to debug `SomeService` when notifications are turned off.
 
 ```
-object ServiceStartedNotifier {
-    var serviceStarted = false   
-}
+    object ServiceStartedNotifier {
+        var serviceStarted = false   
+    }
 ```
 
 - `HomeActivity` is just the launcher activity.
