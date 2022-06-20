@@ -7,12 +7,16 @@ categories: 'blog'
 
 import notifications from './images/copy_pasta.webm';
 
+# The curious case of Foreground service notifications
+
+Ok, let's start with looking at some history.
+
 # A background on background work in Android
 
 When I first got into Android development, background services were kinda [unrestricted](https://android-developers.googleblog.com/2010/02/service-api-changes-starting-with.html)
 
 Because the Services API is so **powerful** and being able to do things in the background while persisting the app's [process](https://proandroiddev.com/android-internals-101-how-android-os-starts-you-application-e1c98a014c05#:~:text=According%20to%20dictionary%20definition%3A%20Zygote,thus%20achieving%20fast%20app%20launches.) can
-actually affect the device's performance due to contention (Memory, CPU) and usage (battery), developers certainly have a responsibility to use services wisely.
+actually affect the device's performance due to contention (Memory, CPU) and usage (Battery), developers certainly have a responsibility to use services wisely.
 
 One more thing to note is progressive restrictions from Android 8.0's [background execution limits](https://developer.android.com/about/versions/oreo/background)
 
